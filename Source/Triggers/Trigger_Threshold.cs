@@ -255,7 +255,7 @@ namespace FluffyManager
                     {
                         var    option  = string.Empty;
                         Action onClick = () => Find.WindowStack.TryRemove( typeof( MainTabWindow_Manager ), false );
-                        Action<UnityEngine.Rect> onHover = null;
+                        Action onHover = null;
                         if ( designation.target.HasThing )
                         {
                             var thing = designation.target.Thing;
