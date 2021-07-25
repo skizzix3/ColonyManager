@@ -43,14 +43,14 @@ namespace FluffyManager
             {
                 foreach ( var thing in Find.CurrentMap.thingGrid.ThingsAt( UI.MouseCell() ).OfType<Building>() )
                     Messages.Message( job.AllowedBuilding( thing.def ).ToString(), MessageTypeDefOf.SilentInput );
-            }, false);
+            }, false );
 
 
             DebugToolMap( "AllowedMineral", delegate
             {
                 foreach ( var thing in Find.CurrentMap.thingGrid.ThingsAt( UI.MouseCell() ).OfType<Mineable>() )
                     Messages.Message( job.AllowedMineral( thing.def ).ToString(), MessageTypeDefOf.SilentInput );
-            }, false);
+            }, false );
 
 
             DebugToolMap( "IsRelevantDeconstructionTarget", delegate
@@ -58,56 +58,56 @@ namespace FluffyManager
                 foreach ( var thing in Find.CurrentMap.thingGrid.ThingsAt( UI.MouseCell() ).OfType<Building>() )
                     Messages.Message( job.IsRelevantDeconstructionTarget( thing ).ToString(),
                                       MessageTypeDefOf.SilentInput );
-            }, false);
+            }, false );
 
             DebugToolMap( "IsRelevantMiningTarget", delegate
             {
                 foreach ( var thing in Find.CurrentMap.thingGrid.ThingsAt( UI.MouseCell() ).OfType<Mineable>() )
                     Messages.Message( job.IsRelevantMiningTarget( thing ).ToString(), MessageTypeDefOf.SilentInput );
-            }, false);
+            }, false );
 
             DebugToolMap( "IsInAllowedArea", delegate
             {
                 foreach ( var thing in Find.CurrentMap.thingGrid.ThingsAt( UI.MouseCell() ).OfType<Building>() )
                     Messages.Message( job.IsInAllowedArea( thing ).ToString(), MessageTypeDefOf.SilentInput );
-            }, false);
+            }, false );
 
             DebugToolMap( "IsReachable", delegate
             {
                 foreach ( var thing in Find.CurrentMap.thingGrid.ThingsAt( UI.MouseCell() ).OfType<Building>() )
                     Messages.Message( job.IsReachable( thing ).ToString(), MessageTypeDefOf.SilentInput );
-            }, false);
+            }, false );
 
             DebugToolMap( "IsRoomDivider", delegate
             {
                 foreach ( var thing in Find.CurrentMap.thingGrid.ThingsAt( UI.MouseCell() ).OfType<Building>() )
                     Messages.Message( job.IsARoomDivider( thing ).ToString(), MessageTypeDefOf.SilentInput );
-            }, false);
+            }, false );
 
             DebugToolMap( "IsRoofSupport: basic", delegate
             {
                 foreach ( var thing in Find.CurrentMap.thingGrid.ThingsAt( UI.MouseCell() ).OfType<Building>() )
                     Messages.Message( job.IsARoofSupport_Basic( thing ).ToString(), MessageTypeDefOf.SilentInput );
-            }, false); ;
+            }, false ); ;
 
             DebugToolMap( "IsRoofSupport: advanced", delegate
             {
                 foreach ( var thing in Find.CurrentMap.thingGrid.ThingsAt( UI.MouseCell() ).OfType<Building>() )
                     Messages.Message( job.IsARoofSupport_Advanced( thing ).ToString(), MessageTypeDefOf.SilentInput );
-            }, false);
+            }, false );
 
             DebugAction( "DrawSupportGrid", delegate
             {
                 foreach ( var cell in job.manager.map.AllCells )
                     if ( job.IsARoofSupport_Basic( cell ) )
                         job.manager.map.debugDrawer.FlashCell( cell, DebugSolidColorMats.MaterialOf( Color.green ) );
-            }, false);
+            }, false );
 
             DebugAction( "GetBaseCenter", delegate
             {
                 var cell = Utilities.GetBaseCenter( job.manager );
                 job.manager.map.debugDrawer.FlashCell( cell, DebugSolidColorMats.MaterialOf( Color.blue ) );
-            }, false);
+            }, false );
 
             DebugToolMap( "DrawPath", delegate
                 {
@@ -118,8 +118,7 @@ namespace FluffyManager
                                                                         TraverseMode.PassDoors, Danger.Some ) );
                     path.DrawPath( null );
                     path.ReleaseToPool();
-                }, false
-            );
+                }, false );
         }
     }
 }
